@@ -1,0 +1,24 @@
+{
+  "name": "create-vite-electron-template",
+  "version": "1.0.0",
+  "description": "Create a project like vite-electron-template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guolaopi/create-vite-electron-template.git"
+  },
+  "keywords": [
+    "vite",
+    "electron",
+    "template"
+  ],
+  "author": "guolaopi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guolaopi/create-vite-electron-template/issues"
+  },
+  "homepage": "https://github.com/guolaopi/create-vite-electron-template#readme"
+}
