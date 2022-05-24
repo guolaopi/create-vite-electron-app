@@ -1,0 +1,42 @@
+{
+    "name": "vite-electron-template",
+    "version": "1.0.0",
+    "description": "A project template by electron & vite & vue3",
+    "main": "./app/main.js",
+    "scripts": {
+        "dev": "node ./development.js",
+        "build": "npm run vite:build && npm run electron:build",
+        "vite:dev": "vite",
+        "vite:build": "vite build --base=./",
+        "electron:dev": "npm run electron:build && cross-env NODE_ENV=development electron .",
+        "electron:build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guolaopi/vite-electron-template.git"
+    },
+    "keywords": [
+        "electron",
+        "es6",
+        "template"
+    ],
+    "author": "guolaopi",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/guolaopi/vite-electron-template/issues"
+    },
+    "homepage": "https://github.com/guolaopi/vite-electron-template#readme",
+    "dependencies": {
+        "child_process": "^1.0.2",
+        "vue": "^3.0.4"
+    },
+    "devDependencies": {
+        "@vue/compiler-sfc": "^3.0.4",
+        "babel-core": "^6.25.0",
+        "babel-preset-es2015": "^6.24.1",
+        "cross-env": "^7.0.3",
+        "electron": "^18.2.4",
+        "vite": "^1.0.0-rc.13",
+        "webpack": "^3.4.1"
+    }
+}
