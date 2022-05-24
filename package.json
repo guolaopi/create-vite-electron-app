@@ -1,7 +1,7 @@
 {
-    "name": "create-vite-electron-template",
+    "name": "create-vite-electron-app",
     "version": "1.0.0",
-    "description": "Create a project like guolaopi/vite-electron-template",
+    "description": "Create a app by vite & es6 & electron",
     "main": "index.js",
     "bin": {
         "create-vite-electron-template": "index.js",
@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/guolaopi/create-vite-electron-template.git"
+        "url": "git+https://github.com/guolaopi/create-vite-electron-app.git"
     },
     "keywords": [
         "vite",
@@ -22,9 +22,9 @@
     "author": "guolaopi",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/guolaopi/create-vite-electron-template/issues"
+        "url": "https://github.com/guolaopi/create-vite-electron-app/issues"
     },
-    "homepage": "https://github.com/guolaopi/create-vite-electron-template#readme",
+    "homepage": "https://github.com/guolaopi/create-vite-electron-app#readme",
     "dependencies": {
         "fs-extra": "^9.0.0",
         "minimist": "^1.2.5"
