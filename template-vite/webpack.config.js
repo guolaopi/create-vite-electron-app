@@ -5,13 +5,22 @@ const src = path.resolve(__dirname, ".");
 const dist = path.resolve(__dirname, "app");
 
 module.exports = {
-    entry: `${src}/main.js`,
+    entry: {
+        main: `${src}/main.js`,
+        preload: `${src}/renderer/preload.js`,
+    },
     output: {
         path: dist,
         filename: "[name].js",
     },
     module: {
-        rules: [],
+        rules: [
+            {
+                test: /\.js$/,
+                loader: "babel-loader",
+                exclude: /node_modules/,
+            },
+        ],
     },
     resolve: {
         extensions: ["*", ".js", ".jsx"],

@@ -12,5 +12,5 @@ export default {
     alias: {
         "/@/": path.resolve(__dirname, `${base}/src`),
     },
-    port: 3000,
+    port: 3333,
 };
