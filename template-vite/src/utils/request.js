@@ -1,4 +1,5 @@
 import { net } from "@electron/remote";
+import qs from "qs";
 
 export default function request(option) {
     return new Promise((resolve, reject) => {
@@ -13,16 +14,19 @@ export default function request(option) {
         } else {
             Object.assign(reqOption, option);
         }
-        const netReq = net.request(reqOption);
-        if (reqOption.method.toLowerCase() == "post" && reqOption.data) {
+        if (reqOption.data) {
             netReq.write(JSON.stringify(option.data));
         }
+        if (reqOption.param) {
+            reqOption.url += `?${qs.stringify(reqOption.param)}`;
+        }
+        const netReq = net.request(reqOption);
         netReq.on("response", (response) => {
             if (response.statusCode != 200) {
                 reject(response);
             } else {
                 response.on("data", (data) => {
-                    resolve(data.toString());
+                    resolve(JSON.parse(data.toString()));
                 });
             }
         });
