@@ -1,7 +1,13 @@
 {
     "appId": "electron.demo.app",
-    "productName": "AppName",
+    "productName": "guolaopi",
     "files": ["app/**"],
+    "extraResources": [
+        {
+            "from": "./src/test-files",
+            "to": "../test-files"
+        }
+    ],
     "directories": {
         "output": "electron_dist"
     },

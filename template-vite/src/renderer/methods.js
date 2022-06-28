@@ -6,7 +6,7 @@ export default {
         return new Promise((resolve, reject) => {
             // call nodeJS api
             console.log(fs);
-            fs.readFile("package.json", (err, data) => {
+            fs.readFile("./test-files/test.txt", (err, data) => {
                 if (err) {
                     console.error(err);
                     reject(err);
