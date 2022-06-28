@@ -1,0 +1,11 @@
+{
+    "appId": "electron.demo.app",
+    "productName": "AppName",
+    "files": ["app/**"],
+    "directories": {
+        "output": "electron_dist"
+    },
+    "win": {
+        "icon": "./app.ico"
+    }
+}

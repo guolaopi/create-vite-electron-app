@@ -1,8 +1,8 @@
-require("babel-core/register");
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
-const src = path.resolve(__dirname, ".");
-const dist = path.resolve(__dirname, "app");
+const src = path.resolve(__dirname, "./src");
+const dist = path.resolve(__dirname, "./app");
 
 module.exports = {
     entry: {
@@ -25,6 +25,19 @@ module.exports = {
     resolve: {
         extensions: ["*", ".js", ".jsx"],
     },
-    target: "electron",
-    plugins: [],
+    target: "electron-main",
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+                parallel: true,
+                terserOptions: {
+                    toplevel: true,
+                    ie8: true,
+                    safari10: true,
+                },
+            }),
+        ],
+    },
 };

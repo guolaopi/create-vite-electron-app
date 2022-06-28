@@ -1,13 +1,11 @@
 const path = require("path");
 
-const base = "./web";
+const base = "./src/web";
 
 export default {
     root: `${base}`,
-    outDir: `${__dirname}/app/dist`,
-    entry: `${base}/src/main.js`,
-    base: "./",
-    assetsDir: "assets",
+    outDir: `${__dirname}/app/web`,
+    assetsDir: "./assets",
     ssr: false,
     alias: {
         "/@/": path.resolve(__dirname, `${base}/src`),

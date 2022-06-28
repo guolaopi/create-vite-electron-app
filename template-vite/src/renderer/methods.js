@@ -1,4 +1,5 @@
 import fs from "fs";
+import request from "../utils/request";
 
 export default {
     readFile: () => {
@@ -7,11 +8,14 @@ export default {
             console.log(fs);
             fs.readFile("package.json", (err, data) => {
                 if (err) {
-                    console(err);
+                    console.error(err);
                     reject(err);
                 }
                 resolve(data.toString());
             });
         });
+    },
+    netRequest: (url) => {
+        return request(url);
     },
 };

@@ -12,7 +12,12 @@ function processRun(target) {
     });
 }
 
-// command to execute
-const scripts = ["vite:dev", "electron:dev"];
+module.exports = {
+    runMultiCmds: (cmds) => {
+        // command to execute
+        cmds.forEach((cmd) => processRun(cmd));
+    },
+};
 
-scripts.forEach((cmd) => processRun(cmd));
+// command to execute
+const scripts = ["dev:vite", "dev:electron"];

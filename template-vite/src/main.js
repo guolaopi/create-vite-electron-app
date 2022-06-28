@@ -2,6 +2,9 @@ import { app, BrowserWindow } from "electron";
 import os from "os";
 import path from "path";
 
+const remote = require("@electron/remote/main");
+remote.initialize(); // 初始化remote模块
+
 function createWindow() {
     const preloadPath =
         (os == "win32" ? "file://" : "") +
@@ -13,16 +16,20 @@ function createWindow() {
         height: 768,
         webPreferences: {
             nodeIntegration: true, //允许渲染进程使用Nodejs
+            enableRemoteModule: true,
+            contextIsolation: true,
             preload: preloadPath,
         },
     });
-    win.setMenuBarVisibility(false); // 隐藏菜单栏
 
+    remote.enable(win.webContents); // 启用remote模块
+
+    win.setMenuBarVisibility(false); // 隐藏菜单栏
     if (process.env.NODE_ENV == "development") {
         const devUrl = "http://localhost:3333";
         win.loadURL(devUrl);
     } else {
-        win.loadFile("./app/dist/index.html");
+        win.loadFile("./app/web/index.html");
     }
 
     win.once("ready-to-show", () => {

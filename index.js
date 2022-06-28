@@ -43,12 +43,18 @@ async function init() {
     pkg.name = path.basename(root);
     await write("package.json", JSON.stringify(pkg, null, 2));
 
+    const ebc = require(path.join(templateDir, `electron-builder-config.json`));
+    ebc.productName = path.basename(root);
+    await write("electron-builder-config.json", JSON.stringify(ebc, null, 2));
+
     console.log(`\nDone. Now run:\n`);
     if (root !== cwd) {
         console.log(`  cd ${path.relative(cwd, root)}`);
     }
-    console.log(`  npm install (or \`yarn\`)`);
-    console.log(`  npm run dev (or \`yarn dev\`)`);
+    console.log(`  npm install  `);
+    console.log(`  npm run dev  `);
+    console.log(`  npm run build  `);
+    console.log(`  npm run package  `);
     console.log();
 }
 
