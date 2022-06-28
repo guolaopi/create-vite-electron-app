@@ -1,6 +1,6 @@
 {
     "appId": "electron.demo.app",
-    "productName": "guolaopi",
+    "productName": "AppName",
     "files": ["app/**"],
     "extraResources": [
         {
