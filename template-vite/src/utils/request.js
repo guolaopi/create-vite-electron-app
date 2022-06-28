@@ -1,5 +1,6 @@
+import { net } from "@electron/remote";
+
 export default function request(option) {
-    const { net } = require("@electron/remote");
     return new Promise((resolve, reject) => {
         let reqOption = {
             headers: {

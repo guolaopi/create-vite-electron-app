@@ -1,12 +1,11 @@
 {
-    "name": "msc-down",
+    "name": "msc-down-electron",
     "version": "1.0.0",
     "description": "A project template by electron & vite & vue3",
     "main": "./app/main.js",
     "scripts": {
         "dev": "node ./build/development.js",
         "build": "node ./build/build.js",
-        "build1": "npm run build:vite && npm run build:electron",
         "dev:vite": "vite",
         "dev:electron": "webpack-cli --config webpack.config.js --progress --mode=development && electron .",
         "build:vite": "vite build --base=./",

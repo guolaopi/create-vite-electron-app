@@ -5,8 +5,13 @@ export default {
     readFile: () => {
         return new Promise((resolve, reject) => {
             // call nodeJS api
-            console.log(fs);
-            fs.readFile("./test-files/test.txt", (err, data) => {
+            let path = "";
+            if (process.env.NODE_ENV == "development") {
+                path = "./src/test-files/test.txt";
+            } else {
+                path = "./test-files/test.txt";
+            }
+            fs.readFile(path, (err, data) => {
                 if (err) {
                     console.error(err);
                     reject(err);

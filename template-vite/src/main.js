@@ -28,6 +28,7 @@ function createWindow() {
     if (process.env.NODE_ENV == "development") {
         const devUrl = "http://localhost:3333";
         win.loadURL(devUrl);
+        win.webContents.openDevTools();
     } else {
         win.loadFile("./app/web/index.html");
     }

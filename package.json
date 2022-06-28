@@ -1,6 +1,6 @@
 {
     "name": "create-vite-electron-app",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Create an app by vite & es6 & electron",
     "main": "index.js",
     "bin": {
