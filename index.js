@@ -51,7 +51,7 @@ async function init() {
     if (root !== cwd) {
         console.log(`  cd ${path.relative(cwd, root)}`);
     }
-    console.log(`  npm i  `);
+    console.log(`  npm install  `);
     console.log(`  npm run dev  `);
     console.log(`  npm run build  `);
     console.log(`  npm run package  `);
