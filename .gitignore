@@ -4,3 +4,4 @@ app
 dist
 dist-ssr
 *.local
+electron_dist

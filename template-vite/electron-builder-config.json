@@ -1,17 +1,19 @@
 {
-    "appId": "electron.demo.app",
-    "productName": "AppName",
-    "files": ["app/**"],
-    "extraResources": [
-        {
-            "from": "./src/test-files",
-            "to": "../test-files"
-        }
-    ],
-    "directories": {
-        "output": "electron_dist"
-    },
-    "win": {
-        "icon": "./app.ico"
+  "appId": "electron.demo.app",
+  "productName": "demo",
+  "files": [
+    "app/**"
+  ],
+  "extraResources": [
+    {
+      "from": "./src/test-files",
+      "to": "../test-files"
     }
+  ],
+  "directories": {
+    "output": "electron_dist"
+  },
+  "win": {
+    "icon": "./app.ico"
+  }
 }

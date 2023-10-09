@@ -26,7 +26,7 @@ export default function request(option) {
                 reject(response);
             } else {
                 response.on("data", (data) => {
-                    resolve(JSON.parse(data.toString()));
+                    resolve(data.toString());
                 });
             }
         });
