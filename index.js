@@ -34,11 +34,11 @@ async function init() {
         }
     };
 
-    const indexHtmlPath = path.join(templateDir, "/src/web/index.html");
+    const indexHtmlPath = path.join(templateDir, "./src/web/index.html");
     if (fs.existsSync(indexHtmlPath)) {
         let indexHtml = await fs.readFile(indexHtmlPath, "utf-8");
         indexHtml = indexHtml.replace(/{{title}}/g, path.basename(root));
-        await write(indexHtmlPath, indexHtml);
+        await fs.writeFile(indexHtmlPath, indexHtml);
     }
 
     const files = await fs.readdir(templateDir);
