@@ -34,6 +34,13 @@ async function init() {
         }
     };
 
+    const indexHtmlPath = path.join(templateDir, "/src/web/index.html");
+    if (fs.existsSync(indexHtmlPath)) {
+        let indexHtml = await fs.readFile(indexHtmlPath, "utf-8");
+        indexHtml = indexHtml.replace(/{{title}}/g, path.basename(root));
+        await write(indexHtmlPath, indexHtml);
+    }
+
     const files = await fs.readdir(templateDir);
     for (const file of files.filter((f) => f !== "package.json")) {
         await write(file);
@@ -51,7 +58,7 @@ async function init() {
     if (root !== cwd) {
         console.log(`  cd ${path.relative(cwd, root)}`);
     }
-    console.log(`  npm i  `);
+    console.log(`  npm install  `);
     console.log(`  npm run dev  `);
     console.log(`  npm run build  `);
     console.log(`  npm run package  `);

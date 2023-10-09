@@ -1,14 +1,22 @@
-const path = require("path");
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
+const path = require("path");
 const base = "./src/web";
 
-export default {
+export default defineConfig({
     root: `${base}`,
-    outDir: `${__dirname}/app/web`,
-    assetsDir: "./assets",
-    ssr: false,
-    alias: {
-        "/@/": path.resolve(__dirname, `${base}/src`),
+    resolve: {
+        alias: {
+            "/@/": path.resolve(__dirname, `${base}/src`),
+        },
     },
-    port: 3333,
-};
+    build: {
+        outDir: `${__dirname}/app/web`,
+        assetsDir: "./assets",
+    },
+    server: {
+        port: 3333,
+    },
+    plugins: [vue()],
+});

@@ -14,6 +14,7 @@ function createWindow() {
         show: false,
         width: 1024,
         height: 768,
+        icon: "./app.ico",
         webPreferences: {
             nodeIntegration: true, //允许渲染进程使用Nodejs
             enableRemoteModule: true,
